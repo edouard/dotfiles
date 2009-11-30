@@ -1,0 +1,40 @@
+# Mostly pinched from Ryan Tomakyo’s dot files
+# http://github.com/rtomayko/dotfiles/blob/rtomayko/.screenrc
+# And http://www.saltycrane.com/blog/2008/01/how-to-scroll-in-gnu-screen/
+
+# -------------------------------------------------------------------
+# Settings
+# -------------------------------------------------------------------
+
+crlf off                        # No Microsoft linebreaks
+startup_message off             # bypass GPL notice (we're aware)
+defscrollback 15000             # big scrollback
+shell bash                      # don't start login shells
+defmonitor on                   # turn on monitoring
+activity "<%n>"                 # let you know when stuff happens!
+silencewait 15                  # notify when window goes silent
+bell_msg "DING! (%n)"
+vbell_msg "DING! (%n)"
+vbell on
+nethack off                     # makes error messages cryptic.
+
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+autodetach on
+defutf8 on
+
+#enable bold
+attrcolor b ".I"
+# allow 256 colors
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# scrolling
+bindkey "^[k" eval "copy" "stuff ^b"  # META + k enter copy mode and move up one page
+bindkey "^k" eval "copy" "stuff k"    # Control + k enter copy mode and move up one line
+bindkey -m "^[k" stuff ^b             # move up one page
+bindkey -m "^k" stuff k               # move up one line
+ 
+# set a big scrolling buffer
+defscrollback 5000
+# Set the caption on the bottom line
+hardstatus on
+caption always "%{= bw}%-w%{= rW}%n %t%{-}%+w %-= %H  %d/%Lm  %l  %C%a"
