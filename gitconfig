@@ -16,6 +16,7 @@
   branch = auto
 [core]
   editor = mate -wl1
+	excludesfile = /Users/edouard/.gitignore
 [apply]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
   
