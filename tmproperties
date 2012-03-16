@@ -1,0 +1,7 @@
+[ source.ruby ]
+softTabs         = true
+tabSize          = 2
+
+[ *.{haml,icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
+softTabs         = true
+tabSize          = 2
